@@ -4,8 +4,8 @@
 namespace PaLabs\EndpointBundle;
 
 
-use PaEndpointExtension;
 use PaLabs\EndpointBundle\Cache\EndpointRouteCacheWarmerCompilerPass;
+use PaLabs\EndpointBundle\DependencyInjection\PaEndpointExtension;
 use PaLabs\EndpointBundle\Loader\EndpointRouteLoaderCompilerPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;

@@ -1,5 +1,6 @@
 <?php
 
+namespace PaLabs\EndpointBundle\DependencyInjection;
 
 use PaLabs\EndpointBundle\EndpointInterface;
 use PaLabs\EndpointBundle\Loader\EndpointRouteLoaderCompilerPass;

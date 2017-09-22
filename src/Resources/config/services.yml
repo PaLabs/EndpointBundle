@@ -11,7 +11,7 @@ services:
       - {name: 'kernel.cache_warmer'}
 
   pa_endpoint.route_generator:
-    class: AppBundle\System\Component\Endpoint\EndpointRouteGenerator
+    class: PaLabs\EndpointBundle\EndpointRouteGenerator
     arguments:
       - '@router'
       - '%kernel.cache_dir%'

@@ -1,0 +1,9 @@
+services:
+
+  pa_endpoint.loader:
+    class: PaLabs\EndpointBundle\Loader\EndpointRouteLoader
+
+  pa_endpoint.cache_warmer:
+    class: PaLabs\EndpointBundle\Cache\EndpointRouteCacheWarmer
+    tags:
+      - {name: 'kernel.cache_warmer'}

@@ -1,0 +1,21 @@
+{
+    "name": "palabs/endpoint-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony Endpoint bundle",
+    "keywords": ["Endpoint"],
+    "license": "MIT",
+    "require": {
+        "php": "^7.0",
+        "symfony/filesystem": "^3.3",
+        "symfony/routing": "^3.3",
+        "symfony/config": "^3.3",
+        "symfony/http-kernel": "^3.3",
+        "symfony/http-foundation": "^3.3",
+        "symfony/dependency-injection": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "PaLabs\\EndpointBundle\\": "src/"
+        }
+    }
+}

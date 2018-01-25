@@ -39,15 +39,15 @@ class EndpointRouteGenerator
         }
     }
 
-    public function route($endpointClass, array $parameters = [])
+    public function route(string $endpointClass, array $parameters = [])
     {
         $routeId = $this->routeId($endpointClass);
         return new ViewRoute($routeId, $parameters);
     }
 
-    public function url($endpointClass, array $parameters = [])
+    public function url(string $endpointClass, array $parameters = [])
     {
         $route = $this->route($endpointClass, $parameters);
-        return $this->router->generate($route->name, $route->parameters);
+        return $this->router->generate($route->getName(), $route->getParameters());
     }
 }

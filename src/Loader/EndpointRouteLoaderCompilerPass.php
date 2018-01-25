@@ -4,7 +4,6 @@
 namespace PaLabs\EndpointBundle\Loader;
 
 
-use PaLabs\EndpointBundle\EndpointInterface;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
@@ -12,11 +11,10 @@ use Symfony\Component\DependencyInjection\Reference;
 class EndpointRouteLoaderCompilerPass implements CompilerPassInterface
 {
     const TAG_NAME = 'pa_labs.endpoint';
-    const SERVICE_NAME = 'pa_endpoint.loader';
 
     public function process(ContainerBuilder $container)
     {
-        if (!$container->has(self::SERVICE_NAME)) {
+        if (!$container->has(EndpointRouteLoader::class)) {
             throw new \Exception("Route loader service is not registered");
         }
 
@@ -25,7 +23,7 @@ class EndpointRouteLoaderCompilerPass implements CompilerPassInterface
             $constructorArgs[$id] = new Reference($id);
         }
 
-        $routeLoader = $container->findDefinition(self::SERVICE_NAME);
+        $routeLoader = $container->findDefinition(EndpointRouteLoader::class);
         $routeLoader->setArgument(0, $constructorArgs);
     }
 }

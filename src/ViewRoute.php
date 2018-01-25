@@ -5,10 +5,10 @@ namespace PaLabs\EndpointBundle;
 
 class ViewRoute
 {
-    public $name;
-    public $parameters;
+    protected $name;
+    protected $parameters;
 
-    public function __construct($name, array $parameters = []) {
+    public function __construct(string $name, array $parameters = []) {
         $this->name = $name;
         $this->parameters = $parameters;
     }
@@ -16,4 +16,16 @@ class ViewRoute
     public function merge(array $parameters) {
         return new ViewRoute($this->name, array_merge($this->parameters, $parameters));
     }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function getParameters(): array
+    {
+        return $this->parameters;
+    }
+
+
 }

@@ -19,7 +19,7 @@ class EndpointRoute
         $this->route = $route;
     }
 
-    public function getRouteName()
+    public function getRouteName(): string
     {
         return $this->routeName;
     }

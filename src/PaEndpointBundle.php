@@ -23,6 +23,7 @@ class PaEndpointBundle extends Bundle
 
         $container
             ->addCompilerPass(new EndpointRouteLoaderCompilerPass())
-            ->addCompilerPass(new EndpointRouteCacheWarmerCompilerPass());
+            ->addCompilerPass(new EndpointRouteCacheWarmerCompilerPass())
+            ->addCompilerPass(new EndpointServicePublicMakerCompilerPass());
     }
 }

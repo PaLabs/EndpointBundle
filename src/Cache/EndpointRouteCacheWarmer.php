@@ -11,6 +11,8 @@ use Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface;
 
 class EndpointRouteCacheWarmer implements CacheWarmerInterface
 {
+    const CACHE_FILE_NAME = 'endpointRoutes.php';
+
     private $endpoints = [];
 
     public function __construct(array $endpoints = [])
@@ -38,7 +40,7 @@ class EndpointRouteCacheWarmer implements CacheWarmerInterface
             }
         }
 
-        $this->dump($endpointRouteNames, $cacheDir . '/endpointRoutes.php');
+        $this->dump($endpointRouteNames, $cacheDir . DIRECTORY_SEPARATOR . self::CACHE_FILE_NAME);
     }
 
     private function dump(array $data, string $cachePath)

@@ -16,5 +16,5 @@ interface EndpointInterface
      */
     public function routes();
 
-    public function execute(Request $request): Response;
+    public function __invoke(Request $request): Response;
 }

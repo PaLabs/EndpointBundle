@@ -31,7 +31,7 @@ class EndpointRouteLoader extends Loader
             foreach ($routes as $endpointRoute) {
                 $routeName = $endpointRoute->getRouteName();
                 $defaults = [
-                    '_controller' => sprintf('%s:%s', $serviceId, 'execute')
+                    '_controller' => $serviceId
                 ];
 
                 $route = $endpointRoute->getRoute();

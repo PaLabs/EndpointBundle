@@ -10,11 +10,6 @@
             <tag name="routing.loader"/>
         </service>
 
-        <service id="PaLabs\EndpointBundle\Cache\EndpointRouteCacheWarmer"
-                 class="PaLabs\EndpointBundle\Cache\EndpointRouteCacheWarmer" public="false">
-            <tag name="kernel.cache_warmer"/>
-        </service>
-
     </services>
 
 </container>

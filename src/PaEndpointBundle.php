@@ -4,7 +4,6 @@
 namespace PaLabs\EndpointBundle;
 
 
-use PaLabs\EndpointBundle\Cache\EndpointRouteCacheWarmerCompilerPass;
 use PaLabs\EndpointBundle\DependencyInjection\PaEndpointExtension;
 use PaLabs\EndpointBundle\Loader\EndpointRouteLoaderCompilerPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -23,7 +22,6 @@ class PaEndpointBundle extends Bundle
 
         $container
             ->addCompilerPass(new EndpointRouteLoaderCompilerPass())
-            ->addCompilerPass(new EndpointRouteCacheWarmerCompilerPass())
             ->addCompilerPass(new EndpointServicePublicMakerCompilerPass());
     }
 }

@@ -15,11 +15,6 @@
             <tag name="kernel.cache_warmer"/>
         </service>
 
-        <service id="PaLabs\EndpointBundle\EndpointRouter"
-                 class="PaLabs\EndpointBundle\EndpointRouter" public="false">
-            <argument type="service" id="router"/>
-            <argument>%kernel.cache_dir%</argument>
-        </service>
     </services>
 
 </container>

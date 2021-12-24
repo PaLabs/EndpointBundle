@@ -8,8 +8,8 @@ use Symfony\Component\Routing\Route;
 
 class EndpointRoute
 {
-    protected $routeName;
-    protected $route;
+    protected string $routeName;
+    protected Route $route;
 
     public function __construct(string $routeName, Route $route) {
         if(empty($routeName)) {

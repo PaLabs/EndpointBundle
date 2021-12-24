@@ -13,14 +13,15 @@ use Symfony\Component\Routing\RouteCollection;
 
 class EndpointRouteLoader extends Loader
 {
-    private $endpoints = [];
+    private array $endpoints;
 
     public function __construct(array $endpoints = [])
     {
+        parent::__construct();
         $this->endpoints = $endpoints;
     }
 
-    public function load($resource, $type = null)
+    public function load($resource, $type = null): RouteCollection
     {
         $collection = new RouteCollection();
         foreach ($this->endpoints as $serviceId => $endpoint) {
@@ -59,7 +60,7 @@ class EndpointRouteLoader extends Loader
     }
 
 
-    public function supports($resource, $type = null)
+    public function supports($resource, $type = null): bool
     {
         return 'endpoints' == $type;
     }

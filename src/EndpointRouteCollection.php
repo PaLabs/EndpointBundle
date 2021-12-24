@@ -10,7 +10,7 @@ use IteratorAggregate;
 class EndpointRouteCollection implements IteratorAggregate
 {
 
-    private $routes;
+    private array $routes;
 
     public function __construct(EndpointRoute... $routes)
     {
